@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:h2:mem:userdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+user:
+  levels:
+    base-exp: 1000
+    multiplier: 1.5
+  initial-stats:
+    health: 50
+    finance: 50
+    education: 50
+    social: 50
+
+logging:
+  level:
+    com.questlife.userservice: DEBUG
